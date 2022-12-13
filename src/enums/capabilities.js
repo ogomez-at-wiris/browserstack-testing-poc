@@ -1,4 +1,4 @@
-export default class Capabilities {
+class Capabilities {
   static CHROME = new Capabilities({
     'bstack:options': {
       os: 'Windows',
@@ -36,3 +36,5 @@ export default class Capabilities {
     this.options = capabilityOptions
   }
 }
+
+module.exports = Capabilities

@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "./src/main.js",
-  "type": "module",
   "scripts": {
-    "test": "node ."
+    "test": "jest --runInBand"
   },
   "keywords": [],
   "author": "",

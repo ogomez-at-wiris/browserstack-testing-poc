@@ -1,4 +1,4 @@
-export default class browserstackContextManager {
+class browserstackContextManager {
   constructor (driver) {
     this.driver = driver
   }
@@ -15,3 +15,5 @@ export default class browserstackContextManager {
     )
   }
 }
+
+module.exports = browserstackContextManager
