@@ -1,9 +1,11 @@
 const BrowserstackDriverService = require('../services/browserstack_driver_service.js')
+const ChromeDriverService = require('../services/chrome_service.js')
 const Capabilities = require('../enums/capabilities.js')
 
 let driver
 beforeEach(async () => {
-  driver = new BrowserstackDriverService(Capabilities.CHROME)
+  // driver = new BrowserstackDriverService(Capabilities.CHROME)
+  driver = new ChromeDriverService()
 })
 
 it('performs an example test', async () => {
@@ -11,5 +13,5 @@ it('performs an example test', async () => {
 })
 
 afterEach(async () => {
-  await driver.quit()
+  // await driver.quit()
 })
