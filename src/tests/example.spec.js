@@ -4,8 +4,19 @@ const Capabilities = require('../enums/capabilities.js')
 
 let driver
 beforeEach(async () => {
-  // driver = new BrowserstackDriverService(Capabilities.CHROME)
-  driver = new ChromeDriverService()
+  const environment = process.env.SELENIUM_ENVIRONMENT
+  switch (environment) {
+    case 'local':
+      driver = new ChromeDriverService()
+      break
+    case 'remote':
+      driver = new BrowserstackDriverService(Capabilities.CHROME)
+      break
+    default:
+      console.log(`Invalid environment: ${environment}`)
+      process.exit(0)
+      break
+  }
 })
 
 it('performs an example test', async () => {

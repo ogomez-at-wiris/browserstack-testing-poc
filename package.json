@@ -4,12 +4,14 @@
   "description": "",
   "main": "./src/main.js",
   "scripts": {
-    "test": "jest --runInBand"
+    "local": "cross-env SELENIUM_ENVIRONMENT=local jest --runInBand",
+    "remote": "cross-env SELENIUM_ENVIRONMENT=remote jest --runInBand"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "selenium-webdriver": "^4.1.2"
   },
