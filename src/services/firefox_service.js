@@ -1,16 +1,16 @@
 const webdriver = require('selenium-webdriver')
 const dotenv = require('dotenv')
-const chrome = require('selenium-webdriver/chrome')
-const chromedriver = require('chromedriver')
+const firefox = require('selenium-webdriver/firefox')
+// firefox driver
+const firefoxDriver = require('geckodriver')
 
-class ChromeService {
+class FirefoxService {
   constructor () {
+    console.log('fire! fire')
     dotenv.config()
-    chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build())
-    // Get a chrome driver
 
     this.driver = new webdriver.Builder()
-      .forBrowser('chrome')
+      .forBrowser('firefox')
       .build()
   }
 
@@ -32,4 +32,4 @@ class ChromeService {
   }
 }
 
-module.exports = ChromeService
+module.exports = FirefoxService

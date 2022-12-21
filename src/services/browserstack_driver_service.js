@@ -17,6 +17,12 @@ class BrowserstackDriverService {
   }
 
   async visit (url) {
+    const cdpConnection = await this.driver.createCDPConnection('page')
+
+    await this.driver.onLogEvent(cdpConnection, function (event) {
+      console.log(`log captured! ${event.args[0].value}`)
+    })
+
     await this.driver.get(url)
   }
 

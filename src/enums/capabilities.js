@@ -1,5 +1,13 @@
+const commonCapabilities = {
+  'browserstack.networkLogs': 'true',
+  'browserstack.networkLogsOptions': {
+    captureContent: 'true'
+  }
+}
+
 class Capabilities {
   static CHROME = new Capabilities({
+    ...commonCapabilities,
     'bstack:options': {
       os: 'Windows',
       osVersion: '11',
@@ -27,6 +35,16 @@ class Capabilities {
       osVersion: 'Big Sur',
       buildName: 'browserstack-build-1',
       sessionName: 'Parallel test 3'
+    },
+    browserName: 'Safari',
+    browserVersion: '14.1'
+  })
+
+  static 'MOBILE' = new Capabilities({
+    'bstack:options': {
+      osVersion: '14',
+      deviceName: 'iPhone 12',
+      realMobile: 'true'
     },
     browserName: 'Safari',
     browserVersion: '14.1'
